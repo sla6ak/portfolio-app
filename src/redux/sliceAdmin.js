@@ -1,15 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialUser = '';
+const initialAdmin = '';
 
 export const curentUser = createSlice({
-    name: 'user',
-    initialState: initialUser,
+    name: 'admin',
+    initialState: initialAdmin,
     reducers: {
-        isUserName(_state, action) {
+        isAdmin(_state, action) {
             return action.payload;
         },
     },
 });
 
-export const { isUserName } = curentUser.actions;
+export const { isAdmin } = curentUser.actions;

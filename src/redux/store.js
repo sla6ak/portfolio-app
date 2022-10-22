@@ -1,16 +1,16 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import storage from 'redux-persist/lib/storage';
-import { curentUser } from './sliceUserName';
+import { curentUser } from './sliceAdmin';
 import { persistStore, persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from 'redux-persist';
 
 const tokenPersistConfig = {
     key: 'root',
     storage,
-    whitelist: ['userName'],
+    whitelist: ['admin'],
 };
 
 const rootReduser = combineReducers({
-    userName: curentUser.reducer,
+    admin: curentUser.reducer,
 });
 
 const persistedReducer = persistReducer(tokenPersistConfig, rootReduser);
