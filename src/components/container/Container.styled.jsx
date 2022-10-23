@@ -6,6 +6,9 @@ export const Shell = styled.div`
     padding-left: 20px;
     padding-right: 20px;
     width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
     @media (min-width: 768px) {
         padding-left: 32px;
         padding-right: 32px;
