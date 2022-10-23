@@ -1,21 +1,90 @@
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { isAdmin } from 'redux/sliceAdmin';
-import { ButtonWrapper, ModalTitle, LogOutContainer, TitleAccent, Button } from './ModalLogOut.styled';
+import {
+    ButtonWrapper,
+    ModalTitle,
+    LogOutContainer,
+    TitleAccent,
+    Button,
+    ShowPasswordBtnStyles,
+} from './ModalLogOut.styled';
 import { GeneralButton } from 'components/generalButton/GeneralButton.styled';
+import { useSelector } from 'react-redux';
+
+import { TextField, InputAdornment, IconButton } from '@mui/material';
+import { Lock, Visibility, VisibilityOff } from '@mui/icons-material';
+const PASSVORD = '12345';
 
 const ModalLogOut = ({ onModalClose }) => {
     const dispatch = useDispatch();
+    const admin = useSelector(state => state.admin);
+    const [showPassword, setShowPassword] = useState(false);
+    const [password, setPassword] = useState('');
+
+    const handleClickShowPassword = () => setShowPassword(!showPassword);
+
+    const handleChange = e => {
+        setPassword(e.target.value);
+    };
 
     const logOut = () => {
-        dispatch(isAdmin(''));
+        if (admin) {
+            dispatch(isAdmin(!admin));
+        }
+        if (!admin) {
+            if (password === PASSVORD) {
+                dispatch(isAdmin(!admin));
+            }
+        }
     };
 
     return (
         <>
             <LogOutContainer>
                 <ModalTitle>
-                    <TitleAccent>Log Out</TitleAccent>
-                    Are you sure you want to log out?
+                    {admin ? (
+                        <>
+                            <TitleAccent>Log Out</TitleAccent>Are you sure you want to log out?
+                        </>
+                    ) : (
+                        <>
+                            <TitleAccent>Log In</TitleAccent>
+                            <TextField
+                                fullWidth
+                                variant={'standard'}
+                                required
+                                id="password"
+                                name="password"
+                                type={showPassword ? 'text' : 'password'}
+                                onChange={handleChange}
+                                value={password}
+                                placeholder={'Password'}
+                                InputProps={{
+                                    startAdornment: (
+                                        <InputAdornment position="start">
+                                            <Lock sx={{ color: '#E0E0E0', ml: '7px' }} />
+                                        </InputAdornment>
+                                    ),
+                                    endAdornment: (
+                                        <InputAdornment position="end">
+                                            <IconButton
+                                                aria-label="toggle password visibility"
+                                                onClick={handleClickShowPassword}
+                                            >
+                                                {showPassword ? (
+                                                    <Visibility />
+                                                ) : (
+                                                    <VisibilityOff sx={ShowPasswordBtnStyles} />
+                                                )}
+                                            </IconButton>
+                                        </InputAdornment>
+                                    ),
+                                }}
+                            />
+                            Are you sure you want to log in?
+                        </>
+                    )}
                 </ModalTitle>
                 <ButtonWrapper>
                     <Button>

@@ -8,18 +8,18 @@ import { Greeeting, LogOutBtn, Wrapper, TextBtn } from './UserMenu.styled';
 const UserMenu = () => {
     const [modal, setModal] = useState(false);
 
-    const userName = useSelector(state => state.userName);
+    const admin = useSelector(state => state.admin);
 
     return (
         <Wrapper>
-            <Greeeting>{userName}</Greeeting>
+            <Greeeting>admin</Greeeting>
             <LogOutBtn
                 onClick={() => {
                     setModal(true);
                 }}
             >
                 <LogoutIcon />
-                <TextBtn> Exit </TextBtn>
+                {admin ? <TextBtn> Exit </TextBtn> : <TextBtn> Enter </TextBtn>}
             </LogOutBtn>
             {modal ? (
                 <Modal
