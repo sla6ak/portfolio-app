@@ -31,10 +31,12 @@ const ModalLogOut = ({ onModalClose }) => {
     const logOut = () => {
         if (admin) {
             dispatch(isAdmin(!admin));
+            onModalClose();
         }
         if (!admin) {
             if (password === PASSVORD) {
                 dispatch(isAdmin(!admin));
+                onModalClose();
             }
         }
     };
@@ -88,7 +90,7 @@ const ModalLogOut = ({ onModalClose }) => {
                 </ModalTitle>
                 <ButtonWrapper>
                     <Button>
-                        <GeneralButton fullWidth variant={'contained'} bts={'submit'} onClick={logOut} type="submit">
+                        <GeneralButton fullWidth variant={'contained'} bts={'submit'} onClick={logOut} type="button">
                             Yes
                         </GeneralButton>
                     </Button>

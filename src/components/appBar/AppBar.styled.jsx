@@ -11,10 +11,10 @@ export const HeaderBox = styled.div`
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: 100px;
+    min-height: 100px;
     /* outline-color: tomato; */
     @media (min-width: 768px) {
-        height: 150px;
+        min-height: 150px;
     }
 `;
 

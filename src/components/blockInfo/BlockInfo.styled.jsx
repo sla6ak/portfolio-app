@@ -1,8 +1,9 @@
 import styled from '@emotion/styled';
 
 export const BlokHeroy = styled.section`
-    height: 200px;
+    min-height: 200px;
     margin-top: 25px;
+    margin-bottom: 35px;
 `;
 export const HeroyFlex = styled.div`
     height: 100%;
@@ -15,6 +16,7 @@ export const HeroyFlex = styled.div`
 export const HeroyText = styled.h1`
     font-weight: 600;
     font-size: 50px;
+    margin-bottom: 35px;
 `;
 export const BlokContacts = styled.div`
     display: flex;
