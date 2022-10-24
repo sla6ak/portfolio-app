@@ -4,8 +4,8 @@ import { Button } from '@mui/material';
 export const GeneralButton = styled(Button)(
     ({ theme, bts }) => `
     border-radius: 20px;
-    width: 100%;
     font-weight: 400;
+    max-width: 300px;
     font-size: 18px;
     line-height: 27px;
     height: 50px;

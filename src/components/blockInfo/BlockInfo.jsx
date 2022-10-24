@@ -1,6 +1,7 @@
 import React from 'react';
 import { BlokHeroy, HeroyText, BlokContacts, HeroyFlex } from './BlockInfo.styled';
 import { Container } from '../container/Container';
+import Contacts from 'components/contacts/Contacts';
 
 const BlockInfo = () => {
     return (
@@ -11,7 +12,7 @@ const BlockInfo = () => {
                         Профессиональное продвижение <br /> сайтов в поиске Yandex и Google
                     </HeroyText>
                     <BlokContacts>
-                        <div>+38 097 173 12 01</div> <div>кейсы</div>
+                        <Contacts size={28} /> <div>кейсы</div>
                     </BlokContacts>
                 </HeroyFlex>
             </Container>
