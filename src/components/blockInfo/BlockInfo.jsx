@@ -12,7 +12,7 @@ const BlockInfo = () => {
                         Профессиональное продвижение <br /> сайтов в поиске Yandex и Google
                     </HeroyText>
                     <BlokContacts>
-                        <Contacts size={28} /> <div>кейсы</div>
+                        <Contacts size={32} /> <div>кейсы</div>
                     </BlokContacts>
                 </HeroyFlex>
             </Container>

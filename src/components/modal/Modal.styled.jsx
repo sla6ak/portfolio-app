@@ -40,7 +40,7 @@ export const ModalCloseBtn = styled.div`
     height: 16px;
     border-radius: 50%;
     cursor: pointer;
-    @media (max-width: 767px) {
+    /* @media (max-width: 767px) {
         display: none;
-    }
+    } */
 `;

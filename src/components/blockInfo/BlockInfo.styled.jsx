@@ -15,8 +15,12 @@ export const HeroyFlex = styled.div`
 
 export const HeroyText = styled.h1`
     font-weight: 600;
-    font-size: 50px;
+    font-size: 30px;
     margin-bottom: 35px;
+    @media (min-width: 768px) {
+        font-size: 50px;
+        line-height: 1.3;
+    }
 `;
 export const BlokContacts = styled.div`
     display: flex;

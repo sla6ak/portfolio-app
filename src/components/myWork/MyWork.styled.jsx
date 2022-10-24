@@ -2,11 +2,15 @@ import styled from '@emotion/styled';
 import { Link } from '@mui/material';
 
 export const ElementWork = styled.div`
+    position: relative;
     width: 100%;
     display: flex;
     min-height: 100px;
     margin-bottom: 25px;
     flex-wrap: wrap;
+    border-radius: 10px;
+    box-shadow: 3px 3px 9px #8a8a8a;
+    padding: 30px 10px;
 `;
 export const HeaderWork = styled.div`
     min-width: 300px;
@@ -21,9 +25,10 @@ export const TitleWork = styled.h2`
     font-weight: 600;
     margin-bottom: 15px;
     text-indent: 15px;
+    width: 85%;
 `;
 export const WorkLink = styled(Link)`
-    text-indent: 20px;
+    /* margin-left: 5px; */
     font-size: 18px;
     color: #428040;
     margin-bottom: 20px;
@@ -65,5 +70,10 @@ export const PunctTask = styled.p`
     color: #2b2a2a;
     font-weight: 400;
     display: flex;
-    align-items: center;
+    margin-top: 5px;
+`;
+export const LinkBox = styled.p`
+    text-indent: 20px;
+    display: flex;
+    /* align-items: center; */
 `;
